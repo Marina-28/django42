@@ -1,8 +1,17 @@
 .nav {
     display: flex;
-    margin: auto;
+    justify-content:space-between;
+    max-width: 300px;
+    margin-left: 0;
+    padding-left: 0;
+    
+
 }
 
 .nav li {
     list-style: none;
+}
+
+.nav a {
+    text-decoration: none;
 }
