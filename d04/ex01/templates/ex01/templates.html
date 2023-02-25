@@ -1,0 +1,29 @@
+{% extends "ex01/base.html" %}
+{% load static %}
+{% block style %}<link rel="stylesheet" href="{% static 'ex01/css/style2.css' %}">{% endblock %}
+{% block title %}Template engine.{% endblock %}
+{% block content %}
+  <h1>Template engine.</h1>
+  <p>
+    Being a web framework, Django needs a convenient way to generate HTML dynamically. The most common approach relies on templates.<br>
+    A template contains the static parts of the desired HTML output as well as some special syntax describing how dynamic content will<br>
+    be inserted. For a hands-on example of creating HTML pages with templates, see Tutorial 3.<br>
+    <br>
+    A Django project can be configured with one or several template engines (or even zero if you don’t use templates).<br>
+    Django ships built-in backends for its own template system, creatively called the Django template language (DTL), <br>
+    and for the popular alternative Jinja2. Backends for other template languages may be available from third-parties. <br>
+    You can also write your own custom backend, see Custom template backend<br>
+    <br>
+    Django defines a standard API for loading and rendering templates regardless of the backend. Loading consists of <br>
+    finding the template for a given identifier and preprocessing it, usually compiling it to an in-memory representation. <br>
+    Rendering means interpolating the template with context data and returning the resulting string.<br>
+    <br>
+    The Django template language is Django’s own template system. Until Django 1.8 it was the only built-in option available.<br>
+    It’s a good template library even though it’s fairly opinionated and sports a few idiosyncrasies. If you don’t have a<br>
+    pressing reason to choose another backend, you should use the DTL, especially if you’re writing a pluggable application <br>
+    and you intend to distribute templates. Django’s contrib apps that include templates, like django.contrib.admin, use the DTL.<br>
+    <br>
+    For historical reasons, both the generic support for template engines and the implementation of the Django template <br>
+    language live in the django.template namespace
+  </p>
+{% endblock %}

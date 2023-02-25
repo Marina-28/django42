@@ -1,0 +1,27 @@
+{% extends "ex01/base.html" %}
+{% block title %}Display process of a static page.{% endblock %}
+{% block content %}
+  <h1>Display process of a static page.</h1>
+  <p>
+    In computer science, request–response or request–reply is one of the basic methods computers use to communicate with <br>
+    each other in a network, in which the first computer sends a request for some data and the second responds to the request. <br>
+    More specifically, it is a message exchange pattern in which a requestor sends a request message to a replier system, which <br>
+    receives and processes the request, ultimately returning a message in response. It is analogous to a telephone call, in which<br>
+    the caller must wait for the recipient to pick up before anything can be discussed. This is a simple but powerful messaging pattern<br>
+    which allows two applications to have a two-way conversation with one another over a channel; it is especially <br>
+    common in client–server architectures<br>
+    <br>
+    For simplicity, this pattern is typically implemented in a purely synchronous fashion, as in web service calls over HTTP, which holds <br>
+    a connection open and waits until the response is delivered or the timeout period expires. However, request–response may also be <br>
+    implemented asynchronously, with a response being returned at some unknown later time. When a synchronous system communicates with <br>
+    an asynchronous system, it is referred to as "sync over async" or "sync/async".[2] This is common in enterprise application integration <br>
+    (EAI) implementations where slow aggregations, time-intensive functions, or human workflow must be performed before a <br>
+    response can be constructed and delivered.<br>
+    <br>
+    In contrast, one-way computer communication, which is like the push-to-talk or "barge in" feature found on some phones and two-way <br>
+    radios, sends a message without waiting for a response. Sending an email is an example of one-way communication, and another example <br>
+    are fieldbus sensors, such as most CAN bus sensors, which periodically and autonomously send out their data, whether or not any other <br>
+    devices on the bus are listening for it. (Most of these systems use a "listen before talk" or other contention-based protocol <br>
+    so multiple sensors can transmit periodic updates without any pre-coordination.)
+  </p>
+{% endblock %}

@@ -1,0 +1,8 @@
+.nav {
+    display: flex;
+    margin: auto;
+}
+
+.nav li {
+    list-style: none;
+}
