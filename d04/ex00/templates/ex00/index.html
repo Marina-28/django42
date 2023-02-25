@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex00: Markdown Cheatsheet.</title>
+</head>
+<body>
+  <h1>Markdown Cheatsheet.</h1>
+  <h2>Headers</h2>
+  <p># H1<br>
+    ## H2<br>
+    ### H3<br>
+    #### H4<br>
+    ##### H5<br>
+    ###### H6</p>
+  <h2>Emphasis</h2>
+  <p>Emphasis, aka italics, with *asterisks* or _underscores_.<br>
+    Strong emphasis, aka bold, with **asterisks** or __underscores__.<br>
+    Combined emphasis with **asterisks and _underscores_**.<br>
+    Strikethrough uses two tildes. ~~Scratch this.~~</p>
+  <h2>Lists</h2>
+  <p>
+    1. First ordered list item<br>
+    2. Another item<br>
+    ⋅⋅* Unordered sub-list. <br>
+    1. Actual numbers don't matter, just that it's a number<br>
+    ⋅⋅1. Ordered sub-list<br>
+    4. And another item.<br><br>
+    ⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).<br><br>
+    ⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅<br>
+    ⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅<br>
+    ⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)<br><br>
+    * Unordered list can use asterisks<br>
+    - Or minuses<br>
+    + Or pluse
+  </p>
+  <h2>Links</h2>
+  <p>
+    [I'm an inline-style link](https://www.google.com)<br><br>
+    [I'm an inline-style link with title](https://www.google.com "Google's Homepage")<br><br>
+    [I'm a reference-style link][Arbitrary case-insensitive reference text]<br><br>
+    [I'm a relative reference to a repository file](../blob/master/LICENSE)<br><br>
+    [You can use numbers for reference-style link definitions][1]<br><br>
+    Or leave it empty and use the [link text itself].<br><br>
+    URLs and URLs in angle brackets will automatically get turned into links.<br>
+    http://www.example.com or <http://www.example.com> and sometimes <br>
+    example.com (but not on Github, for example).<br><br>
+    Some text to show that the reference links can follow later.<br><br>
+    [arbitrary case-insensitive reference text]: https://www.mozilla.org<br>
+    [1]: http://slashdot.org<br>
+    [link text itself]: http://www.reddit.com
+  </p>
+  <h2>Images</h2>
+  <p>Here's our logo (hover to see the title text):<br><br>
+    Inline-style: <br>
+    ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")<br><br>
+    Reference-style: <br>
+    ![alt text][logo]<br><br>
+    [logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+  </p>
+  <h2>Code and Syntax Highlighting</h2>
+  <p>
+    ```javascript<br>
+    var s = "JavaScript syntax highlighting";<br>
+    alert(s);<br>
+    ```<br><br>
+    ```python<br>
+    s = "Python syntax highlighting"<br>
+    print s<br>
+    ```<br><br>
+    ```<br>
+    No language indicated, so no syntax highlighting. <br>
+    But let's throw in a <b>tag</b>.<br>
+    ```
+  </p>
+  <h2>Tables</h2>
+  <p>
+    Colons can be used to align columns.<br><br>
+    | Tables&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|&nbspAre&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|&nbspCool&nbsp&nbsp|<br>
+    | ------------- |:-------------:|&nbsp-----:|<br>
+    | col 3 is&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|&nbspright-aligned&nbsp|&nbsp$1600&nbsp|<br>
+    | col 2 is&nbsp&nbsp&nbsp&nbsp&nbsp|&nbspcentered&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp$12&nbsp|<br>
+    | zebra stripes&nbsp| are neat&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp$1 |<br><br>
+    There must be at least 3 dashes separating each header cell.<br>
+    The outer pipes (|) are optional, and you don't need to make the <br>
+    raw Markdown line up prettily. You can also use inline Markdown.v<br>
+    Markdown | Less | Pretty<br>
+    --- | --- | ---<br>
+    *Still* | `renders` | **nicely**<br>
+    1 | 2 | 3
+  </p>
+  <h2>Line Breaks</h2>
+  <p>
+    Here's a line for us to start with.<br><br>
+    This line is separated from the one above by two newlines, so it will be a *separate paragraph*.<br><br>
+    This line is also a separate paragraph, but...<br>
+    This line is only separated by a single newline, so it's a separate line in the *same paragraph*.</p>
+  <h2>YouTube Videos</h2>
+  <p>
+    [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+  </p>
+</body>
+</html>
