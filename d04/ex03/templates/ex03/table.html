@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>BLACK</th>
+      <th>RED</th>
+      <th>GREEN</th>
+      <th>BLUE</th>
+    </tr>
+    {% for color in colors %}
+      <tr>
+        <td style = "background-color : rgb({{ color }}, {{ color }}, {{ color }});">black</td>
+        <td style = "background-color : rgb({{ color }}, 0, 0);">red</td>
+        <td style = "background-color : rgb(0, {{ color }}, 0);">green</td>
+        <td style = "background-color : rgb(0, 0, {{ color }});">blue</td>
+      </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
