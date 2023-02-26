@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import form_view
+from .views import form_view, history
 
 urlpatterns = [
-    path('', form_view, name="first_form")
+    path('', form_view, name="first_form"),
+    path('history/', history)
 ]
