@@ -77,8 +77,8 @@ WSGI_APPLICATION = 'd05.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django42',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'djangodb',
         'USER': 'django42',
         'PASSWORD': os.environ.get("db_pwd", str()),
         'HOST': '127.0.0.1',
