@@ -27,7 +27,8 @@ MOVIES = [
     }
 ]
 
-def work_with_db(query):
+def work_with_db(query, SELECT=False):
+    selected_fields = list()
     try:
         if not DB_PARAMS:
             raise Exception("Не удалось получить данные для соединения с БД.")
@@ -40,12 +41,15 @@ def work_with_db(query):
         ) as conn:
             with conn.cursor() as cur:
                 cur.execute(query)
+                if SELECT:
+                    selected_fields = cur.fetchall()
+                    return True, selected_fields
             conn.commit()
-            status, message = True, None
+            status = True,
     except Exception as ex:
         print(f"ERROR>{ex}")
-        return False
-    return True
+        return False, None
+    return True, None
 
 
 def populate(request, table_name):
@@ -58,7 +62,10 @@ def populate(request, table_name):
 '{mv.get("producer", str())}', \
 '{mv.get("release_date", str())}'),\
 """
-        
+    if not values:
+        status = True
+        message = "nothing to add"
+        return render(request, "ex00/index.html", context={"status":status, "message":message})
     query = f"""
 INSERT INTO {table_name} \
 (episode_nb, title, \
@@ -67,5 +74,18 @@ release_date) \
 VALUES {values[:-1]} \
 ON CONFLICT DO NOTHING;\
 """
-    status = work_with_db(query)
+    status, selected_fields = work_with_db(query)
     return render(request, "ex00/index.html", context={"status":status})
+
+
+def display(request, table_name):
+    query = f"SELECT * from {table_name}"
+    status, selected_fields = work_with_db(query, SELECT=True)
+    return render(
+        request,
+        "ex02/display_table.html",
+        context={
+            "status":status,
+            "data":selected_fields
+        }
+    )

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+  {% if not data %}
+    <p>No data available</p>
+  {% else %}
+    <table>
+      <tr>
+        <th>episode_nb</th>
+        <th>title</th>
+        <th>opening_crawl</th>
+        <th>director</th>
+        <th>producer</th>
+        <th>release_date</th>
+      </tr>
+      {% for row in data %}
+        <tr>
+          {% for v in row %}
+            <td>{{v}}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+{% endblock %}
