@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import init
+from .views import populate #, dispaly
+from ex00.views import init
 
 urlpatterns = [
-    path('init', init, {"table_name": "ex00_movies"})
+    path('init', init, {"table_name": "ex02_movies"}),
+    path('populate', populate, {"table_name": "ex02_movies"}),
+    # path('display', dispaly)
 ]

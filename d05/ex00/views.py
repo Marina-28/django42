@@ -5,10 +5,10 @@ import psycopg2
 DB_PARAMS = settings.DATABASES.get("default", dict())
 
 # Create your views here.
-def init(request):
+def init(request, table_name):
     
     query = f"""\
-CREATE TABLE IF NOT EXISTS ex00_movies \
+CREATE TABLE IF NOT EXISTS {table_name} \
 (episode_nb INT PRIMARY KEY, \
 title VARCHAR(64) NOT NULL UNIQUE, \
 opening_crawl TEXT, \
@@ -26,7 +26,6 @@ release_date DATE NOT NULL);"""
             port=DB_PARAMS.get("PORT", str())
         ) as conn:
             with conn.cursor() as cur:
-                cur.execute("drop table if exists ex00_movies;")
                 cur.execute(query)
             conn.commit()
             status = True
