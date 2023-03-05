@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.conf import settings
-import psycopg2
+from utils.db_utils import work_with_db
 
 DB_PARAMS = settings.DATABASES.get("default", dict())
 MOVIES = [
@@ -27,29 +27,29 @@ MOVIES = [
     }
 ]
 
-def work_with_db(query, SELECT=False):
-    selected_fields = list()
-    try:
-        if not DB_PARAMS:
-            raise Exception("Не удалось получить данные для соединения с БД.")
-        with psycopg2.connect(
-            database=DB_PARAMS.get("NAME", str()),
-            user=DB_PARAMS.get("USER", str()),
-            password=DB_PARAMS.get("PASSWORD", str()),
-            host=DB_PARAMS.get("HOST", str()),
-            port=DB_PARAMS.get("PORT", str())
-        ) as conn:
-            with conn.cursor() as cur:
-                cur.execute(query)
-                if SELECT:
-                    selected_fields = cur.fetchall()
-                    return True, selected_fields
-            conn.commit()
-            status = True,
-    except Exception as ex:
-        print(f"ERROR>{ex}")
-        return False, None
-    return True, None
+# def work_with_db(query, SELECT=False):
+#     selected_fields = list()
+#     try:
+#         if not DB_PARAMS:
+#             raise Exception("Не удалось получить данные для соединения с БД.")
+#         with psycopg2.connect(
+#             database=DB_PARAMS.get("NAME", str()),
+#             user=DB_PARAMS.get("USER", str()),
+#             password=DB_PARAMS.get("PASSWORD", str()),
+#             host=DB_PARAMS.get("HOST", str()),
+#             port=DB_PARAMS.get("PORT", str())
+#         ) as conn:
+#             with conn.cursor() as cur:
+#                 cur.execute(query)
+#                 if SELECT:
+#                     selected_fields = cur.fetchall()
+#                     return True, selected_fields
+#             conn.commit()
+#             status = True,
+#     except Exception as ex:
+#         print(f"ERROR>{ex}")
+#         return False, None
+#     return True, None
 
 
 def populate(request, table_name):
@@ -74,13 +74,13 @@ release_date) \
 VALUES {values[:-1]} \
 ON CONFLICT DO NOTHING;\
 """
-    status, selected_fields = work_with_db(query)
+    status, selected_fields = work_with_db(query, DB_PARAMS)
     return render(request, "ex00/index.html", context={"status":status})
 
 
 def display(request, table_name):
     query = f"SELECT * from {table_name}"
-    status, selected_fields = work_with_db(query, SELECT=True)
+    status, selected_fields = work_with_db(query, DB_PARAMS, SELECT=True)
     return render(
         request,
         "ex02/display_table.html",

@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'ex00.apps.Ex00Config',
     'ex01.apps.Ex01Config',
     'ex02.apps.Ex02Config',
-    'ex03.apps.Ex03Config'
+    'ex03.apps.Ex03Config',
+    'ex04.apps.Ex04Config'
 ]
 
 MIDDLEWARE = [
