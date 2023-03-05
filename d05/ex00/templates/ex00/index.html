@@ -2,8 +2,10 @@
 {% block content %}
   {% if status %}
     <p>OK</p>
-    <p>{{message}}</p>
   {% else %}
     <p>FAIL :[</p>
+  {% endif %}
+  {% if status %}
+    <p>{{message}}</p>
   {% endif %}
 {% endblock %}

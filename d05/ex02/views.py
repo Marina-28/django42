@@ -85,7 +85,6 @@ def display(request, table_name):
         request,
         "ex02/display_table.html",
         context={
-            "status":status,
             "data":selected_fields
         }
     )

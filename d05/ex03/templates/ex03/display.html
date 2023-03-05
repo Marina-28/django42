@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+  {% if not data %}
+    <p>No data available</p>
+  {% else %}
+    <table>
+      <tr>
+        <th>episode_nb</th>
+        <th>title</th>
+        <th>opening_crawl</th>
+        <th>director</th>
+        <th>producer</th>
+        <th>release_date</th>
+      </tr>
+      {% for mv in data %}
+        <tr>
+            <td>{{mv.episode_nb}}</td>
+            <td>{{mv.title}}</td>
+            <td>{{mv.opening_crawl}}</td>
+            <td>{{mv.director}}</td>
+            <td>{{mv.producer}}</td>
+            <td>{{mv.release_date}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+{% endblock %}
