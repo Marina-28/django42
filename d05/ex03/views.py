@@ -46,7 +46,7 @@ def populate_view(request):
 
 def display_view(request):
     selected_fields = Movies.objects.all()
-    print(selected_fields)
+    # print(selected_fields)
     return render(
         request,
         "ex03/display.html",
